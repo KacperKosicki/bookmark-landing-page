@@ -1,0 +1,88 @@
+@import '../../styles/variables';
+
+.footer {
+  background-color: $dark-blue;
+  padding: 2rem 0;
+
+  .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 3rem;
+    }
+  }
+
+  .left {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+
+    .logo {
+      width: 140px;
+
+      // wewnętrzne elementy SVG
+      :global(.logo-circle) {
+        fill: $blue; // niebieskie koło
+      }
+
+      :global(.logo-arrow) {
+        fill: white; // biały środek/strzałka
+      }
+
+      path[fill="currentColor"] {
+        fill: white; // biały napis BOOKMARK
+      }
+    }
+
+    .links {
+      display: flex;
+      gap: 2rem;
+
+      li a {
+        color: white;
+        text-transform: uppercase;
+        font-size: 0.875rem;
+        letter-spacing: 1px;
+        transition: color 0.3s;
+
+        &:hover {
+          color: $red;
+        }
+      }
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .right {
+    display: flex;
+    gap: 1.5rem;
+
+    a img {
+      width: 20px;
+      height: 20px;
+      filter: brightness(0) invert(1);
+      transition: filter 0.3s;
+
+      &:hover {
+        filter: invert(56%) sepia(82%) saturate(460%) hue-rotate(320deg);
+      }
+    }
+
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
+  }
+}

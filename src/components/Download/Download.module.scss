@@ -1,0 +1,101 @@
+@import '../../styles/variables';
+
+.download {
+    text-align: center;
+    margin-top: 10rem;
+
+    h2 {
+        font-size: 2rem;
+        color: $dark-blue;
+        margin-bottom: 1rem;
+    }
+
+    .description {
+        color: $gray;
+        max-width: 600px;
+        margin: 0 auto 3rem;
+    }
+
+    .cards {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center; // ⬅️ DODANE – działa na mobile
+
+        @media (min-width: 768px) {
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start; // dla desktopu
+            gap: 2rem;
+        }
+    }
+
+
+    .card {
+        background-color: white;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+        border-radius: 10px;
+        text-align: center;
+        flex: 1;
+        max-width: 300px;
+
+        .separator {
+            display: block;
+            width: calc(100% + 4rem); // rozszerza poza padding 2rem z lewej i prawej
+            margin: 1.5rem -2rem; // negatywny margines = znosi padding
+            height: auto;
+        }
+
+
+        img {
+            width: 100px;
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            color: $dark-blue;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            color: $gray;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        button {
+            background-color: $blue;
+            color: white;
+            border: 2px solid transparent; // ← zawsze ma border
+            padding: 0.75rem 1.5rem;
+            font-weight: 500;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: $font-family;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+
+            &:hover {
+                background-color: transparent;
+                border-color: $blue; // ← tylko kolor się zmienia
+                color: $blue;
+            }
+        }
+
+
+        // Schodkowy efekt na desktopie
+        &:nth-child(2) {
+            @media (min-width: 768px) {
+                margin-top: 2rem;
+            }
+        }
+
+        &:nth-child(3) {
+            @media (min-width: 768px) {
+                margin-top: 4rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,148 @@
+@import '../../styles/variables';
+
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 100px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 768px) {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 3rem;
+    }
+}
+
+.left {
+    flex: 1;
+
+    h1 {
+        font-size: 3.5rem;
+        color: $dark-blue;
+        margin-bottom: 1.5rem;
+        margin-top: 5rem;
+
+        @media (max-width: 768px) {
+            font-size: 30px;
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    p {
+        color: $gray;
+        margin-bottom: 2rem;
+        max-width: 600px;
+        font-size: 1.2rem;
+
+        @media (max-width: 768px) {
+            font-size: 18px;
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 768px) {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  
+
+  button {
+    border: 2px solid transparent;
+    padding: .9rem 1.45rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(0,0,0,.1);
+    transition: border-color .3s, background-color .3s,
+    box-shadow .3s, transform .3s;
+    will-change: transform, box-shadow;
+  }
+
+  .chrome {
+    background: $blue;
+    color: white;
+
+    &:hover {
+      background: transparent;
+      border-color: $blue;
+      color: $blue;
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0,0,0,.15);
+    }
+  }
+
+  .firefox {
+    background: lighten($gray, 35%);
+    color: $dark-blue;
+
+    &:hover {
+      background: transparent;
+      border-color: $dark-blue;
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0,0,0,.15);
+    }
+  }
+}
+
+.right {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+
+    .image {
+        width: 100%;
+        max-width: 600px;
+        z-index: 2;
+        transform: translateX(150px); // ⬅️ PRZESUWA OBRAZEK BARDZIEJ W PRAWO
+
+        @media (max-width: 768px) {
+            max-width: 90%;
+            transform: none;
+            margin: 0 auto;
+        }
+    }
+}
+
+.backgroundShape {
+    position: absolute;
+    top: 200px;
+    right: 0;
+    width: 600px;
+    height: 350px;
+    background-color: $blue;
+    border-top-left-radius: 300px;
+    border-bottom-left-radius: 300px;
+    z-index: 0;
+
+    @media (max-width: 768px) {
+        position: absolute;
+        top: 150px; // oddala od logo
+        bottom: auto;
+        right: 0;
+        left: auto;
+        width: 75vw;
+        height: 200px;
+        background-color: $blue;
+        border-radius: 0;
+        border-bottom-left-radius: 120px;
+        border-top-left-radius: 120px;
+        z-index: -1;
+    }
+}
