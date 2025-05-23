@@ -14,6 +14,7 @@ const PopupModal = ({ onClose }) => {
   return (
     <div className={styles.overlay} onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+        <button className={styles.closeButton} onClick={onClose} aria-label="Close modal">×</button>
         <div className={styles.content}>
           <div className={styles.image}>
             <img src={tabImage} alt="Share your bookmarks" />

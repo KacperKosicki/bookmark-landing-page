@@ -14,8 +14,8 @@ const Newsletter = () => {
       setError(true);
     } else {
       setError(false);
-      // Można tu wysłać dane, np. do backendu lub pokazać sukces
       alert('Email accepted!');
+      setEmail('');
     }
   };
 

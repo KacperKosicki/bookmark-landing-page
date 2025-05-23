@@ -12,6 +12,10 @@
   }
 }
 
+.hidden {
+  display: none;
+}
+
 .container {
   width: 100%;
   max-width: 1200px;
@@ -69,6 +73,7 @@
   list-style: none;
   display: flex;
   gap: 2rem;
+  font-size: 14px;
 
   li a {
     text-decoration: none;
@@ -88,7 +93,7 @@
   color: white !important;
   padding: 0.4rem 1.8rem;
   border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   margin-left: 2rem;
   transition: all 0.3s ease;
   border: 2px solid transparent;
@@ -98,7 +103,7 @@
     border-color: $red;
     color: $red !important;
     transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -198,7 +203,6 @@
         font-size: 1.2rem;
         text-transform: uppercase;
         letter-spacing: 0.1em;
-        font-weight: 500;
         margin: 1rem 0;
       }
 

@@ -3,13 +3,12 @@
 .features {
     text-align: center;
     background: white;
-    position: relative; // ⬅️ DODAJ TO
+    position: relative;
 
     h2 {
         font-size: 2rem;
         color: $dark-blue;
-        margin-bottom: 1rem;
-        margin-top: 1rem;
+        margin: 1rem 0;
     }
 
     .description {
@@ -74,33 +73,32 @@
         }
     }
 
-
     .tabContent {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 2rem;
-        min-height: 400px; // 🔒 STAŁA WYSOKOŚĆ CAŁEGO BLOKU
+        min-height: 400px;
 
         @media (min-width: 768px) {
             flex-direction: row;
             text-align: left;
             gap: 5rem;
-            min-height: 350px; // dostosowane do desktopu
+            min-height: 350px;
         }
 
         .imageContainer {
             position: relative;
             width: 100%;
             max-width: 500px;
-            min-height: 300px; // 🔒 STAŁA WYSOKOŚĆ OBRAZKA
+            min-height: 300px;
             display: flex;
             align-items: center;
 
             img {
-                max-height: 100%; // obrazek dostosowuje się wysokością
+                max-height: 100%;
                 max-width: 100%;
-                object-fit: contain; // bez rozciągania
+                object-fit: contain;
                 position: relative;
                 z-index: 2;
             }
@@ -110,7 +108,7 @@
             max-width: 400px;
             display: flex;
             flex-direction: column;
-            justify-content: center; // 🔄 wyśrodkowanie tekstu względem obrazka
+            justify-content: center;
 
             h3 {
                 font-size: 1.75rem;
@@ -118,13 +116,14 @@
                 color: $dark-blue;
 
                 @media (max-width: 768px) {
-                    margin-top: 5rem; // lub np. 3rem
+                    margin-top: 5rem;
                 }
             }
 
             p {
                 margin-bottom: 1.5rem;
                 color: $gray;
+                font-size: 1rem;
             }
 
             button {
@@ -149,9 +148,9 @@
 
 .backgroundShapeLeft {
     position: absolute;
-    top: 400px; // ⬅️ niżej niż było (z 200px)
+    top: 400px;
     left: 0;
-    transform: translateX(-15%); // ⬅️ mniej agresywne cofnięcie do lewej (czyli bardziej do środka)
+    transform: translateX(-15%);
     width: 800px;
     height: 300px;
     background-color: $blue;
@@ -160,7 +159,7 @@
     z-index: 0;
 
     @media (max-width: 768px) {
-        top: 545px; // ⬅️ zwiększ ile chcesz – im więcej, tym niżej
+        top: 545px;
         transform: translateX(-20%);
         width: 95vw;
         height: 220px;

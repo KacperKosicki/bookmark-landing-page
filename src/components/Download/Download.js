@@ -11,7 +11,7 @@ const Download = () => {
       <div className="container">
         <h2>Download the extension</h2>
         <p className={styles.description}>
-          We've got more browsers in the pipeline. Please do let us know if you've got a favourite you'd like us to prioritize. 
+          We've got more browsers in the pipeline. Please do let us know if you've got a favourite you'd like us to prioritize.
         </p>
 
         <div className={styles.cards}>

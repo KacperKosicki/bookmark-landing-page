@@ -12,7 +12,7 @@
 
   p {
     color: $gray;
-    max-width: 600px;
+    max-width: 500px;
     margin: 0 auto 3rem;
   }
 
@@ -42,7 +42,7 @@
         display: flex;
         align-items: center;
         transition: transform 0.3s ease;
-        overflow: visible; // ✅ pozwala SVG wychodzić poza granice
+        overflow: visible;
         color: $blue;
 
         svg {
@@ -56,11 +56,11 @@
     }
 
     &.active {
-        .icon svg {
-          transform: rotate(180deg) scale(1.1);
-          color: $red;
-        }
+      .icon svg {
+        transform: rotate(180deg) scale(1.1);
+        color: $red;
       }
+    }
 
     .answer {
       margin-bottom: 1rem;
@@ -85,7 +85,6 @@
   }
 }
 
-// Opcjonalna animacja pojawienia
 @keyframes fadeIn {
   from {
     opacity: 0;

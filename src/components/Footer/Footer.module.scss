@@ -24,17 +24,16 @@
     .logo {
       width: 140px;
 
-      // wewnętrzne elementy SVG
       :global(.logo-circle) {
-        fill: $blue; // niebieskie koło
+        fill: $blue;
       }
 
       :global(.logo-arrow) {
-        fill: white; // biały środek/strzałka
+        fill: white;
       }
 
       path[fill="currentColor"] {
-        fill: white; // biały napis BOOKMARK
+        fill: white;
       }
     }
 

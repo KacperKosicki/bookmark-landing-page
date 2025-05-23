@@ -10,23 +10,34 @@ import PopupModal from './components/Modal/PopupModal';
 
 function App() {
   const [showModal, setShowModal] = useState(false);
+  const [hasBeenShown, setHasBeenShown] = useState(false);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setShowModal(true), 30000); // 30s
-
-    const handleMouseMove = (e) => {
-      if (e.clientY < 50) {
+    const timer = setTimeout(() => {
+      if (!hasBeenShown) {
         setShowModal(true);
-        window.removeEventListener('mousemove', handleMouseMove);
+        setHasBeenShown(true);
+      }
+    }, 30000);
+
+    return () => clearTimeout(timer);
+  }, [hasBeenShown]);
+
+  useEffect(() => {
+    const handleMouseOut = (e) => {
+      if (e.clientY <= 0 && !hasBeenShown) {
+        setShowModal(true);
+        setHasBeenShown(true);
       }
     };
-    window.addEventListener('mousemove', handleMouseMove);
 
-    return () => {
-      clearTimeout(timeout);
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
+    document.addEventListener('mouseout', handleMouseOut);
+    return () => document.removeEventListener('mouseout', handleMouseOut);
+  }, [hasBeenShown]);
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
 
   return (
     <div className="App">
@@ -37,7 +48,7 @@ function App() {
       <FAQ />
       <Newsletter />
       <Footer />
-      {showModal && <PopupModal onClose={() => setShowModal(false)} />}
+      {showModal && <PopupModal onClose={closeModal} />}
     </div>
   );
 }

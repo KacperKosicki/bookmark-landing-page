@@ -8,6 +8,7 @@ import TwitterIcon from '../../assets/images/icon-twitter.svg';
 
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const closeMenu = () => setIsMobileMenuOpen(false);
 
     useEffect(() => {
         document.body.style.overflow = isMobileMenuOpen ? 'hidden' : 'auto';
@@ -15,7 +16,7 @@ const Navbar = () => {
 
     return (
         <>
-            <nav className={styles.navbar}>
+            <nav className={`${styles.navbar} ${isMobileMenuOpen ? styles.hidden : ''}`}>
                 <div className={styles.container}>
                     <div className={styles.logo}>
                         <LogoIcon className={isMobileMenuOpen ? styles.logoIconWhite : styles.logoIcon} />
@@ -36,23 +37,22 @@ const Navbar = () => {
                 </div>
             </nav>
 
-
             {isMobileMenuOpen && (
                 <div className={styles.mobileMenu}>
                     <div className={styles.mobileHeader}>
                         <div className={styles.mobileLogo}>
                             <LogoIcon className={styles.logoIconWhite} />
                         </div>
-                        <button onClick={() => setIsMobileMenuOpen(false)}>
+                        <button onClick={closeMenu}>
                             <img src={CloseIcon} alt="Close menu" />
                         </button>
                     </div>
 
                     <ul className={styles.mobileLinks}>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#pricing">Pricing</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="#login" className={styles.login}>Login</a></li>
+                        <li><a href="#features" onClick={closeMenu}>Features</a></li>
+                        <li><a href="#pricing" onClick={closeMenu}>Pricing</a></li>
+                        <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
+                        <li><a href="#login" className={styles.login} onClick={closeMenu}>Login</a></li>
                     </ul>
 
                     <div className={styles.socials}>

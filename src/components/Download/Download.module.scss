@@ -12,7 +12,7 @@
 
     .description {
         color: $gray;
-        max-width: 600px;
+        max-width: 500px;
         margin: 0 auto 3rem;
     }
 
@@ -20,16 +20,15 @@
         display: flex;
         flex-direction: column;
         gap: 2rem;
-        align-items: center; // ⬅️ DODANE – działa na mobile
+        align-items: center;
 
         @media (min-width: 768px) {
             flex-direction: row;
             justify-content: center;
-            align-items: flex-start; // dla desktopu
+            align-items: flex-start;
             gap: 2rem;
         }
     }
-
 
     .card {
         background-color: white;
@@ -39,14 +38,6 @@
         text-align: center;
         flex: 1;
         max-width: 300px;
-
-        .separator {
-            display: block;
-            width: calc(100% + 4rem); // rozszerza poza padding 2rem z lewej i prawej
-            margin: 1.5rem -2rem; // negatywny margines = znosi padding
-            height: auto;
-        }
-
 
         img {
             width: 100px;
@@ -62,13 +53,20 @@
         p {
             color: $gray;
             font-size: 0.9rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .separator {
+            display: block;
+            width: calc(100% + 4rem);
+            margin: 1.5rem -2rem;
+            height: auto;
         }
 
         button {
             background-color: $blue;
             color: white;
-            border: 2px solid transparent; // ← zawsze ma border
+            border: 2px solid transparent;
             padding: 0.75rem 1.5rem;
             font-weight: 500;
             border-radius: 5px;
@@ -79,13 +77,11 @@
 
             &:hover {
                 background-color: transparent;
-                border-color: $blue; // ← tylko kolor się zmienia
+                border-color: $blue;
                 color: $blue;
             }
         }
 
-
-        // Schodkowy efekt na desktopie
         &:nth-child(2) {
             @media (min-width: 768px) {
                 margin-top: 2rem;
